@@ -1,0 +1,19 @@
+{
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Lado del servidor, tercer parcial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio V",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "expres": "^0.0.5",
+    "express": "^4.17.1",
+    "express-generator": "^4.16.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14"
+  }
+}
