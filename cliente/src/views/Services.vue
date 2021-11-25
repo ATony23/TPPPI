@@ -23,15 +23,15 @@ export default {
     this.getServices();
   },
   methods: {
-    // getServices() {
-    //   axios
-    //     .get("http://localhost:3000/servicios/mostrarTodos")
-    //     .then((result) => {
-    //       this.services = result.data.Data;
-    //       console.log(result.data.Data);
-    //     })
-    //     .catch((e) => console.log(e));
-    // },
+    getServices() {
+      axios
+        .get("http://localhost:3000/servicios/mostrarTodos")
+        .then((result) => {
+          this.services = result.data.Data;
+          console.log(result.data.Data);
+        })
+        .catch((e) => console.log(e));
+    },
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="BookedComponent">
     <b-container>
       <b-row align-v="center">
-        <b-col class="bv-example-row" v-for="book in getBookedList" :key="book.title" md="3">
+        <b-col class="bv-example-row" v-for="book in bookList" :key="book.title" md="3">
           <b-card tag="book" style="max-width: 20rem" class="mb-2" footer="Book">
             <h1>{{ book.title }}</h1>
             <b-card-text>
@@ -39,16 +39,16 @@ export default {
     regresar() {
       this.$router.push("/servicesAdmin");
     },
-    async getBooked() {
-      const bookedList = this.$store.getters["booked/getBookedList"];
+    // async getBooked() {
+    //   const bookedList = this.$store.getters["booked/getBookedList"];
 
-      if (bookedList && bookedList.length == 0) {
-        await this.$store.dispatch("booked/getBooked");
-      }
-    },
+    //   if (bookedList && bookedList.length == 0) {
+    //     await this.$store.dispatch("booked/getBooked");
+    //   }
+    // },
   },
-  created() {
-    this.getBooked();
-  },
+  // created() {
+  //   this.getBooked();
+  // },
 };
 </script>

@@ -9,8 +9,8 @@
       <b-row align-v="center">
         <b-col
           class="bv-example-row"
-          v-for="service in getServicesList"
-          :key="service.id"
+          v-for="service in servicesList"
+          :key="service.title"
           md="3"
         >
           <b-card tag="service" style="max-width: 20rem" class="mb-2" footer="Servicio">
@@ -28,17 +28,15 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex"
 
 export default {
   name: "ServicesComponent",
   props: {
-    servicesList: null,
-    serviceType: null,
+    servicesList: null
   },
-  computed: {
-    ...mapGetters('services', ['getServicesList'])
-  },
+  // computed: {
+  //   ...mapGetters('services', ['getServicesList'])
+  // },
   methods: {
     book() {
       this.$router.push("Book");
@@ -46,17 +44,17 @@ export default {
     cerrarSesion() {
       this.$router.push("/");
     },
-    async getServices() {
+    // async getServices() {
 
-      const servicesList = this.$store.getters["services/getServicesList"];
+    //   const servicesList = this.$store.getters["services/getServicesList"];
 
-      if (servicesList && servicesList.length == 0 ) {
-        await this.$store.dispatch('services/getServices');
-      }
-    }
+    //   if (servicesList && servicesList.length == 0 ) {
+    //     await this.$store.dispatch('services/getServices');
+    //   }
+    // }
   },
-  created() {
-    this.getServices()
-  }
+  // created() {
+  //   this.getServices()
+  // }
 };
 </script>
